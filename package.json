@@ -1,0 +1,32 @@
+{
+  "name": "bluebird-events",
+  "version": "1.0.0",
+  "description": "A wrapper around event emitters that returns a bluerbird promise resolved or rejected when certain events are fired.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toddbluhm/bluebird-events"
+  },
+  "keywords": [
+    "bluebird",
+    "events",
+    "wrapper"
+  ],
+  "author": "Todd Bluhm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toddbluhm/bluebird-events/issues"
+  },
+  "homepage": "https://github.com/toddbluhm/bluebird-events",
+  "peerDependencies": {
+    "bluebird": "2.x"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "should": "^6.0.3",
+    "bluebird": "^2.9.25"
+  }
+}
