@@ -21,7 +21,7 @@ var someEmitter = new TestEmitter();
 
 var promise = blueBirdEvents(someEmitter, {
   resolve: 'success-event-name',
-  reject: 'error-event-name',
+  reject: ['error-event-name', 'error-event-name-2'],
   cancel: 'cancel-event-name' // by passing cancel the promise is made cancelable
 });
 
@@ -30,6 +30,9 @@ someEmitter.emit('success-event-name');
 
 //Will reject promise with the given error
 someEmitter.emit('error-event-name', new Error('Some Error Occurred!'));
+
+//Will also reject promise with the given error
+someEmitter.emit('error-event-name-2', new Error('Some Other Error Occurred!'));
 ```
 
 Dependencies
