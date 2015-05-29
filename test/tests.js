@@ -50,7 +50,7 @@ describe('Bluebird-Events used inside a class', function() {
   });
 
   it('should cancel with Error', function() {
-    var prom = this.testClass.shouldCancelWithError()
+    var prom = this.testClass.shouldCancelWithError();
 
     //promise should be pending
     prom.reflect().isPending().should.equal.true;
@@ -348,7 +348,7 @@ describe('Util Functions', function() {
   describe('EventsToArray', function() {
     it('should convert a string to array', function() {
       var eventName = 'Hi';
-      var events = bluebirdEvents.EventsToArray(eventName);
+      var events = bluebirdEvents.eventsToArray(eventName);
       eventName.should.equal('Hi');
       events.should.be.array;
       events.length.should.equal(1);
@@ -357,7 +357,7 @@ describe('Util Functions', function() {
 
     it('should leave an array as array', function() {
       var eventNames = ['Hi', 'Bye'];
-      var events = bluebirdEvents.EventsToArray(eventNames);
+      var events = bluebirdEvents.eventsToArray(eventNames);
       eventNames.should.be.array;
       eventNames.length.should.equal(2);
 
@@ -371,7 +371,7 @@ describe('Util Functions', function() {
 
     it('should fail if passed the wrong type', function() {
       should.throws(function() {
-        bluebirdEvents.EventsToArray({});
+        bluebirdEvents.eventsToArray({});
       });
     });
   });
