@@ -72,7 +72,7 @@ TestClass.prototype.shouldCancelWithError = function () {
   });
 };
 
-TestClass.prototype.cancel = function() {
+TestClass.prototype.cancel = function () {
   this.emit('cancel', new Error('Some Error!'));
 };
 
