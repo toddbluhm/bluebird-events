@@ -23,14 +23,16 @@ module.exports = exports = function (obj, events) {
     throw new Error('Object passed in must inherit from require("events").EventEmitter!');
   }
 
-  if (!events || typeof events !== 'object' || Array.isArray(events)) {
-    throw new Error('Missing events object. Please pass in an events object with ' +
-      'resolve/reject events');
+  //Default values
+  events = events || {};
+  if (!events.resolve &&
+    typeof events.resolve !== 'boolean') {
+    events.resolve = 'finish';
   }
 
-  if (!events.resolve && !events.reject && !events.cancel) {
-    throw new Error('No valid event type specified in events object! Please pass in at least ' +
-      'one of the specified event types: resolve, reject, or cancel.');
+  if (!events.reject &&
+    typeof events.reject !== 'boolean') {
+    events.reject = 'error';
   }
 
   // Listener cleanup method

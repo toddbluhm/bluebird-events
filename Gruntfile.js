@@ -9,14 +9,14 @@ module.exports = function (grunt) {
     jshint: {
       all: files,
       options: {
-        jshintrc: './config/.jshintrc'
+        jshintrc: '.jshintrc'
       }
     },
     jsbeautifier: {
       modify: {
         src: files,
         options: {
-          config: './config/.jsbeautifyrc'
+          config: '.jsbeautifyrc'
         }
       }
     },
