@@ -1,6 +1,12 @@
 var bluebirdEvents = require('../index'),
   should = require('should'),
-  TestClass = require('./TestClass');
+  TestClass = require('./TestClass'),
+  BPromise = require('bluebird'),
+  TimeoutError = BPromise.TimeoutError;
+
+function shouldNotResolveHere() {
+  'Should not resolve'.should.be.false;
+}
 
 describe('Bluebird-Events used inside a class', function () {
   before(function () {
@@ -13,9 +19,7 @@ describe('Bluebird-Events used inside a class', function () {
 
   it('should reject', function () {
     return this.testClass.shouldReject()
-      .then(function () {
-        'Should not resolve'.should.be.false;
-      })
+      .then(shouldNotResolveHere)
       .catch(function () {
         return true;
       });
@@ -23,9 +27,7 @@ describe('Bluebird-Events used inside a class', function () {
 
   it('should cancel', function () {
     return this.testClass.shouldCancel()
-      .then(function () {
-        'Should not resolve'.should.be.false;
-      })
+      .then(shouldNotResolveHere)
       .catch(function () {
         return true;
       });
@@ -40,9 +42,7 @@ describe('Bluebird-Events used inside a class', function () {
 
   it('should reject with Error', function () {
     return this.testClass.shouldRejectWithError()
-      .then(function () {
-        'Should not resolve'.should.be.false;
-      })
+      .then(shouldNotResolveHere)
       .catch(function (err) {
         err.message.should.equal('Some Error!');
         return true;
@@ -59,9 +59,7 @@ describe('Bluebird-Events used inside a class', function () {
     this.testClass.cancel();
 
     return prom
-      .then(function () {
-        'Should not resolve'.should.be.false;
-      })
+      .then(shouldNotResolveHere)
       .catch(function (err) {
         err.message.should.equal('Some Error!');
         return true;
@@ -96,9 +94,7 @@ describe('Bluebird-Events used with emitter based object', function () {
     this.testClass.emit('uh-oh');
 
     return prom
-      .then(function () {
-        'Should not resolve'.should.be.false;
-      })
+      .then(shouldNotResolveHere)
       .catch(function () {
         return true;
       });
@@ -114,9 +110,7 @@ describe('Bluebird-Events used with emitter based object', function () {
     this.testClass.emit('good-bye');
 
     return prom
-      .then(function () {
-        'Should not resolve'.should.be.false;
-      })
+      .then(shouldNotResolveHere)
       .catch(function () {
         return true;
       });
@@ -147,9 +141,7 @@ describe('Bluebird-Events used with emitter based object', function () {
     this.testClass.emit('uh-oh', new Error('Some Error'));
 
     return prom
-      .then(function () {
-        'Should not resolve'.should.be.false;
-      })
+      .then(shouldNotResolveHere)
       .catch(function (err) {
         err.message.should.equal('Some Error');
         return true;
@@ -166,9 +158,7 @@ describe('Bluebird-Events used with emitter based object', function () {
     this.testClass.emit('good-bye', new Error('Some Error'));
 
     return prom
-      .then(function () {
-        'Should not resolve'.should.be.false;
-      })
+      .then(shouldNotResolveHere)
       .catch(function (err) {
         err.message.should.equal('Some Error');
         return true;
@@ -213,6 +203,7 @@ describe('Bluebird-Events used with mutliple events', function () {
     this.testClass.emit('bad');
 
     return prom
+      .then(shouldNotResolveHere)
       .catch(function () {
         var prom2 = bluebirdEvents(self.testClass, {
           resolve: ['success', 'anotherSuccess'],
@@ -224,6 +215,7 @@ describe('Bluebird-Events used with mutliple events', function () {
 
         return prom2;
       })
+      .then(shouldNotResolveHere)
       .catch(function () {
         return true;
       });
@@ -240,6 +232,7 @@ describe('Bluebird-Events used with mutliple events', function () {
     this.testClass.emit('cancel');
 
     return prom
+      .then(shouldNotResolveHere)
       .catch(function () {
         var prom2 = bluebirdEvents(self.testClass, {
           resolve: ['success', 'anotherSuccess'],
@@ -251,6 +244,7 @@ describe('Bluebird-Events used with mutliple events', function () {
 
         return prom2;
       })
+      .then(shouldNotResolveHere)
       .catch(function () {
         return true;
       });
@@ -294,6 +288,7 @@ describe('Bluebird-Events used with mutliple events', function () {
     this.testClass.emit('bad', new Error('Uh-Oh!'));
 
     return prom
+      .then(shouldNotResolveHere)
       .catch(function (err) {
         err.message.should.equal('Uh-Oh!');
 
@@ -307,13 +302,14 @@ describe('Bluebird-Events used with mutliple events', function () {
 
         return prom2;
       })
+      .then(shouldNotResolveHere)
       .catch(function (err) {
         err.message.should.equal('My Bad');
         return true;
       });
   });
 
-  it('should canel with both events and values', function () {
+  it('should cancel with both events and values', function () {
     var self = this,
       prom = bluebirdEvents(this.testClass, {
         resolve: ['success', 'anotherSuccess'],
@@ -324,6 +320,7 @@ describe('Bluebird-Events used with mutliple events', function () {
     this.testClass.emit('cancel', new Error('Good Bye!'));
 
     return prom
+      .then(shouldNotResolveHere)
       .catch(function (err) {
         err.message.should.equal('Good Bye!');
 
@@ -337,8 +334,74 @@ describe('Bluebird-Events used with mutliple events', function () {
 
         return prom2;
       })
+      .then(shouldNotResolveHere)
       .catch(function (err) {
         err.message.should.equal('Goofy!');
+        return true;
+      });
+  });
+});
+
+describe('Bluebird-Events used with default events', function () {
+  before(function () {
+    this.testClass = new TestClass();
+  });
+
+  it('should resolve by listening for default "finish" event', function () {
+    var prom = bluebirdEvents(this.testClass);
+
+    this.testClass.emit('finish');
+
+    return prom;
+  });
+
+  it('should reject by listening for default "error" event', function () {
+    var prom = bluebirdEvents(this.testClass);
+
+    this.testClass.emit('error');
+
+    return prom
+      .then(shouldNotResolveHere)
+      .catch(function () {
+        return true;
+      });
+  });
+});
+
+describe('Bluebird-Events used with disabled events', function () {
+  before(function () {
+    this.testClass = new TestClass();
+  });
+
+  it('should not resolve because of an emitted event', function () {
+    var prom = bluebirdEvents(this.testClass, {
+      resolve: false
+    });
+
+    this.testClass.emit('finish');
+
+    return prom
+      .timeout(100, 'Never resolved')
+      .then(shouldNotResolveHere)
+      .catch(TimeoutError, function (e) {
+        e.message.should.equal('Never resolved');
+        return true;
+      });
+  });
+
+  it('should not reject because of an emitted event', function () {
+    var prom = bluebirdEvents(this.testClass, {
+      reject: false
+    });
+
+    this.testClass.emit('error');
+
+    return prom
+      .then(shouldNotResolveHere)
+      .error(shouldNotResolveHere)
+      .timeout(100, 'Never rejected')
+      .catch(TimeoutError, function (e) {
+        e.message.should.equal('Never rejected');
         return true;
       });
   });
