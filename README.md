@@ -4,12 +4,15 @@
 Bluebird-Events
 ===
 
-This package wraps an [event emitter ](https://nodejs.org/api/events.html#events_class_events_eventemitter) object and returns a [bluebird](https://github.com/petkaantonov/bluebird) promise that is either resolved,
-rejected, or canceled based on what events are fired from the emitter.
+This package wraps an [event emitter](https://nodejs.org/api/events.html#events_class_events_eventemitter) object and returns a [bluebird](https://github.com/petkaantonov/bluebird) promise that is either resolved, rejected, or canceled based on what events are fired from the emitter.
 
-Install
+Installation
 ---
 `npm install bluebird-events`
+
+Optionally run tests:
+
+`npm test`
 
 Usage
 ---
@@ -28,10 +31,10 @@ var promise = blueBirdEvents(someEmitter, {
 // Will resolve the promise
 someEmitter.emit('success-event-name');
 
-//Will reject promise with the given error
+// Will reject the promise with the given error
 someEmitter.emit('error-event-name', new Error('Some Error Occurred!'));
 
-//Will also reject promise with the given error
+// Will also reject the promise with the given error
 someEmitter.emit('error-event-name-2', new Error('Some Other Error Occurred!'));
 ```
 
