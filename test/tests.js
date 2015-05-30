@@ -69,7 +69,7 @@ describe('Bluebird-Events used inside a class', function () {
   });
 });
 
-describe('Bluebird-Events used with emmitter based object', function () {
+describe('Bluebird-Events used with emitter based object', function () {
   before(function () {
     this.testClass = new TestClass();
   });
