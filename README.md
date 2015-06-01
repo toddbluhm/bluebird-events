@@ -43,20 +43,20 @@ someEmitter.emit('error-event-name-2', new Error('Some Other Error Occurred!'));
 API
 ---
 
-**promisify(emitter, events)**
+#### promisify(emitter, events)
 
 `emitter`[`Object`] - Some object that can emit events (usually inherited from [Events.EventEmitter](https://nodejs.org/api/events.html#events_class_events_eventemitter))
 
 `events`[`Object`] - Contains a mapping of events to listen for
 
-`events.resolve`[`String`,`Array of Strings` or `Boolean`] - The name for the event that will cause the promise to resolve (defaults to: `'finish'`)
+`events.resolve`[`String`, `Array of Strings`, or `Boolean`] - The name for the event that will cause the promise to resolve (defaults to: `'finish'`)
 
-`events.reject`[`String`,`Array of Strings` or `Boolean`] - The name for the event that will cause the promise to reject (defaults to: `'error'`)
+`events.reject`[`String`, `Array of Strings`, or `Boolean`] - The name for the event that will cause the promise to reject (defaults to: `'error'`)
 
 `events.cancel`[`String` or `Array of Strings`] - The name for the event that will cause the promise to cancel (defaults to: `null`).
 *If used, this will mark the promise chain as [cancelable](https://github.com/petkaantonov/bluebird/blob/master/API.md#cancellation)*
 
-Returns bluebird promise
+**Returns** - a bluebird promise
 
 *Note: To disable listening for all resolve or reject events (including default and custom events) just pass in `false` for the resolve/reject value.*
 ```js
