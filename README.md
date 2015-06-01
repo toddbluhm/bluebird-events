@@ -71,3 +71,17 @@ Dependencies
 This library is dependent upon `bluebird`, but because `bluebird` is so common, there is no need to install it multiple times so `bluebird` is declared as a `peerDependency`
 
 *Note: `bluebird` is also declared as a `devDependency` for running the test suite*
+
+## Contributers
+
+- [Brian Moeskau](https://github.com/bmoeskau)
+
+- [Kevin Moritz](https://github.com/ecorkevin)
+
+## License
+
+**MIT**
+
+Copyright &copy; 2015 Level Seven
+
+Authored by [Todd Bluhm](https://github.com/toddbluhm)
