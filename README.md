@@ -72,7 +72,7 @@ This library is dependent upon `bluebird`, but because `bluebird` is so common, 
 
 *Note: `bluebird` is also declared as a `devDependency` for running the test suite*
 
-## Contributers
+## Contributors
 
 - [Brian Moeskau](https://github.com/bmoeskau)
 
