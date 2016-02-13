@@ -15,8 +15,7 @@ function eventsToArray(events) {
 module.exports = exports = function (obj, events) {
   var listeners = {},
     resolveEvents,
-    rejectEvents,
-    cancelEvents;
+    rejectEvents;
 
   // Param Errors
   if (!obj || typeof obj.emit !== 'function') {
@@ -73,14 +72,6 @@ module.exports = exports = function (obj, events) {
       addEventsToObj(rejectEvents, executePromise(reject));
     }
   });
-
-  // Handle the cancel event
-  if (events.cancel) {
-    prom.cancellable();
-    cancelEvents = eventsToArray(events.cancel);
-
-    addEventsToObj(cancelEvents, executePromise(prom.cancel, prom));
-  }
 
   return prom;
 };

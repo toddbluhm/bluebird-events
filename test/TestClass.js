@@ -25,19 +25,7 @@ TestClass.prototype.shouldReject = function () {
     reject: 'error'
   });
 
-  this.emit('error');
-
-  return prom;
-};
-
-TestClass.prototype.shouldCancel = function () {
-  var prom = bluebirdEvents(this, {
-    resolve: 'done',
-    reject: 'error',
-    cancel: 'cancel'
-  });
-
-  this.emit('cancel');
+  this.emit('error', new Error('Oh no!'));
 
   return prom;
 };
@@ -62,18 +50,6 @@ TestClass.prototype.shouldRejectWithError = function () {
   this.emit('error', new Error('Some Error!'));
 
   return prom;
-};
-
-TestClass.prototype.shouldCancelWithError = function () {
-  return bluebirdEvents(this, {
-    resolve: 'done',
-    reject: 'error',
-    cancel: 'cancel'
-  });
-};
-
-TestClass.prototype.cancel = function () {
-  this.emit('cancel', new Error('Some Error!'));
 };
 
 module.exports = exports = TestClass;

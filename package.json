@@ -1,10 +1,13 @@
 {
   "name": "bluebird-events",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A wrapper around event emitters that returns a bluerbird promise resolved or rejected when certain events are fired.",
   "main": "index.js",
+  "engines": {
+    "node": ">=0.10 <6.x"
+  },
   "scripts": {
-    "test": "grunt test"
+    "test": "./node_modules/.bin/grunt test"
   },
   "repository": {
     "type": "git",
@@ -21,17 +24,18 @@
     "url": "https://github.com/L7Labs/bluebird-events/issues"
   },
   "homepage": "https://github.com/L7Labs/bluebird-events",
+  "dependencies": {},
   "peerDependencies": {
-    "bluebird": "2.x"
+    "bluebird": ">=2.x <4.x"
   },
   "devDependencies": {
+    "bluebird": "^3.3.0",
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-jshint": "^0.11.0",
     "grunt-jsbeautifier": "^0.2.8",
     "grunt-mocha-test": "^0.12.7",
-    "mocha": "^2.2.5",
-    "should": "^6.0.3",
-    "bluebird": "^2.9.25"
+    "mocha": "^2.4.5",
+    "should": "^8.2.2"
   }
 }

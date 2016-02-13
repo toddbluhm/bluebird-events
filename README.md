@@ -6,7 +6,9 @@
 Bluebird-Events
 ===
 
-This package wraps an [event emitter](https://nodejs.org/api/events.html#events_class_events_eventemitter) object and returns a [bluebird](https://github.com/petkaantonov/bluebird) promise that is either resolved, rejected, or canceled based on what events are fired from the emitter.
+This package wraps an [event emitter](https://nodejs.org/api/events.html#events_class_events_eventemitter) object and returns a [bluebird](https://github.com/petkaantonov/bluebird) promise that is either resolved, or rejected based on what events are fired from the emitter.
+
+**Note: Bluebird-Events v2.x is NOT backwards compatible with v1.x see [changelog](https://github.com/L7labs/bluebird-events/blob/master/CHANGELOG.md) for details**
 
 Installation
 ---
@@ -26,8 +28,7 @@ var someEmitter = new TestEmitter();
 
 var promise = promisify(someEmitter, {
   resolve: 'success-event-name',
-  reject: ['error-event-name', 'error-event-name-2'],
-  cancel: 'cancel-event-name' // by passing cancel the promise is made cancelable
+  reject: ['error-event-name', 'error-event-name-2']
 });
 
 // Will resolve the promise
@@ -52,9 +53,6 @@ API
 `events.resolve`[`String`, `Array of Strings`, or `Boolean`] - The name for the event that will cause the promise to resolve (defaults to: `'finish'`)
 
 `events.reject`[`String`, `Array of Strings`, or `Boolean`] - The name for the event that will cause the promise to reject (defaults to: `'error'`)
-
-`events.cancel`[`String` or `Array of Strings`] - The name for the event that will cause the promise to cancel (defaults to: `null`).
-*If used, this will mark the promise chain as [cancelable](https://github.com/petkaantonov/bluebird/blob/master/API.md#cancellation)*
 
 **Returns** - a bluebird promise
 
