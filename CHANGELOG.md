@@ -1,5 +1,10 @@
 # Changelog
 
+2.0.1
+---
+- Removed the max range limiter for nodejs version
+- Removed the max range limiter for bluebird version
+
 2.0.0
 - Updated to use bluebird 3.x and support node 5
 - Removed Cancelation feature because Bluebird v3 changed it and I'm not quite sure how
