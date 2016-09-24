@@ -253,7 +253,7 @@ describe('Bluebird-Events used with disabled events', function () {
 
     this.testClass.emit('err') //  cannot use 'error' here because it will cause an
     //  unhandled exception because its a Node "Special Case" event
-    return prom
+    prom
       .then(shouldNotResolveHere)
       .catch(shouldNotResolveHere)
       .timeout(100, 'Never rejected')
@@ -270,7 +270,7 @@ describe('Bluebird-Events used with disabled events', function () {
 
     this.testClass.emit('finish')
 
-    return prom
+    prom
       .timeout(100, 'Never resolved')
       .then(shouldNotResolveHere)
       .catch(TimeoutError, function (e) {
