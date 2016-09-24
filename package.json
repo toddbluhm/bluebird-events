@@ -7,7 +7,8 @@
     "node": ">=0.10"
   },
   "scripts": {
-    "test": "./node_modules/.bin/grunt test"
+    "test": "standard --fix && istanbul cover node_modules/.bin/_mocha -- -R spec",
+    "coveralls": "coveralls < coverage/lcov.info"
   },
   "repository": {
     "type": "git",
@@ -30,12 +31,10 @@
   },
   "devDependencies": {
     "bluebird": "^3.3.0",
-    "grunt": "^0.4.5",
-    "grunt-cli": "^0.1.13",
-    "grunt-contrib-jshint": "^0.11.0",
-    "grunt-jsbeautifier": "^0.2.8",
-    "grunt-mocha-test": "^0.12.7",
+    "coveralls": "^2.11.14",
+    "istanbul": "^0.4.5",
     "mocha": "^2.4.5",
-    "should": "^8.2.2"
+    "should": "^8.2.2",
+    "standard": "^8.1.0"
   }
 }

@@ -1,7 +1,10 @@
-[![Circle CI](https://img.shields.io/circleci/project/L7labs/bluebird-events.svg)](https://circleci.com/gh/L7labs/bluebird-events)
+[![Travis CI](https://img.shields.io/travis/toddbluhm/bluebird-events.svg)](https://travis-ci.org/toddbluhm/bluebird-events)
+[![Coveralls](https://img.shields.io/coveralls/toddbluhm/bluebird-events.svg?maxAge=2592000)](https://coveralls.io/github/toddbluhm/bluebird-events)
 [![NPM version](https://img.shields.io/npm/v/bluebird-events.svg)](https://www.npmjs.com/package/bluebird-events)
-[![PeerDependencies](https://img.shields.io/david/peer/L7Labs/bluebird-events.svg)](https://github.com/L7labs/bluebird-events/blob/master/package.json)
 [![Downloads](http://img.shields.io/npm/dm/bluebird-events.svg?style=flat)](https://www.npmjs.com/package/bluebird-events)
+[![NPM license](https://img.shields.io/npm/l/sinon-bluebird.svg?maxAge=2592000)](https://www.npmjs.com/package/sinon-bluebird)
+[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+
 
 Bluebird-Events
 ===
@@ -22,23 +25,23 @@ Usage
 ---
 
 ```js
-var promisify = require('bluebird-events');
+var promisify = require('bluebird-events')
 
-var someEmitter = new TestEmitter();
+var someEmitter = new TestEmitter()
 
 var promise = promisify(someEmitter, {
   resolve: 'success-event-name',
   reject: ['error-event-name', 'error-event-name-2']
-});
+})
 
 // Will resolve the promise
-someEmitter.emit('success-event-name');
+someEmitter.emit('success-event-name')
 
 // Will reject the promise with the given error
-someEmitter.emit('error-event-name', new Error('Some Error Occurred!'));
+someEmitter.emit('error-event-name', new Error('Some Error Occurred!'))
 
 // Will also reject the promise with the given error
-someEmitter.emit('error-event-name-2', new Error('Some Other Error Occurred!'));
+someEmitter.emit('error-event-name-2', new Error('Some Other Error Occurred!'))
 ```
 
 API
