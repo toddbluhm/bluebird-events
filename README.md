@@ -2,7 +2,7 @@
 [![Coveralls](https://img.shields.io/coveralls/toddbluhm/bluebird-events.svg?maxAge=2592000)](https://coveralls.io/github/toddbluhm/bluebird-events)
 [![NPM version](https://img.shields.io/npm/v/bluebird-events.svg)](https://www.npmjs.com/package/bluebird-events)
 [![Downloads](http://img.shields.io/npm/dm/bluebird-events.svg?style=flat)](https://www.npmjs.com/package/bluebird-events)
-[![NPM license](https://img.shields.io/npm/l/sinon-bluebird.svg?maxAge=2592000)](https://www.npmjs.com/package/sinon-bluebird)
+[![NPM license](https://img.shields.io/npm/l/bluebird-events.svg?maxAge=2592000)](https://www.npmjs.com/package/bluebird-events)
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 
