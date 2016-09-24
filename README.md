@@ -6,23 +6,21 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 
-Bluebird-Events
-===
+# Bluebird-Events
 
 This package wraps an [event emitter](https://nodejs.org/api/events.html#events_class_events_eventemitter) object and returns a [bluebird](https://github.com/petkaantonov/bluebird) promise that is either resolved, or rejected based on what events are fired from the emitter.
 
-**Note: Bluebird-Events v2.x is NOT backwards compatible with v1.x see [changelog](https://github.com/L7labs/bluebird-events/blob/master/CHANGELOG.md) for details**
+**Note: Bluebird-Events v2.x is NOT backwards compatible with v1.x see [changelog](https://github.com/toddbluhm/bluebird-events/blob/master/CHANGELOG.md) for details**
 
-Installation
----
+## Installation
+
 `npm install bluebird-events`
 
 Optionally run tests:
 
 `npm test`
 
-Usage
----
+## Usage
 
 ```js
 var promisify = require('bluebird-events')
@@ -44,8 +42,7 @@ someEmitter.emit('error-event-name', new Error('Some Error Occurred!'))
 someEmitter.emit('error-event-name-2', new Error('Some Other Error Occurred!'))
 ```
 
-API
----
+## API
 
 #### promisify(emitter, events)
 
@@ -67,8 +64,8 @@ promisify(emitter, {resolve: false});
 ```
 
 
-Dependencies
----
+## Dependencies
+
 This library is dependent upon `bluebird`, but because `bluebird` is so common, there is no need to install it multiple times so `bluebird` is declared as a `peerDependency`
 
 *Note: `bluebird` is also declared as a `devDependency` for running the test suite*
@@ -76,13 +73,8 @@ This library is dependent upon `bluebird`, but because `bluebird` is so common, 
 ## Contributors
 
 - [Brian Moeskau](https://github.com/bmoeskau)
-
-- [Kevin Moritz](https://github.com/ecorkevin)
+- [Kevin Moritz](https://github.com/mayorbyrne)
 
 ## License
 
 **MIT**
-
-Copyright &copy; 2015 Level Seven
-
-Authored by [Todd Bluhm](https://github.com/toddbluhm)

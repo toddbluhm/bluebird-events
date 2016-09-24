@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/L7Labs/bluebird-events"
+    "url": "https://github.com/toddbluhm/bluebird-events"
   },
   "keywords": [
     "bluebird",
@@ -20,11 +20,15 @@
     "wrapper"
   ],
   "author": "Todd Bluhm",
+  "contributors": [
+    "Brian Moeskau",
+    "Kevin Moritz <kevinecor@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/L7Labs/bluebird-events/issues"
+    "url": "https://github.com/toddbluhm/bluebird-events/issues"
   },
-  "homepage": "https://github.com/L7Labs/bluebird-events",
+  "homepage": "https://github.com/toddbluhm/bluebird-events",
   "dependencies": {},
   "peerDependencies": {
     "bluebird": ">=2.x"
@@ -33,8 +37,8 @@
     "bluebird": "^3.3.0",
     "coveralls": "^2.11.14",
     "istanbul": "^0.4.5",
-    "mocha": "^2.4.5",
-    "should": "^8.2.2",
+    "mocha": "^3.0.2",
+    "should": "^11.1.0",
     "standard": "^8.1.0"
   }
 }
