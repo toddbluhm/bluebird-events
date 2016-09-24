@@ -1,55 +1,55 @@
-var bluebirdEvents = require('../index'),
-  util = require('util'),
-  events = require('events');
+var bluebirdEvents = require('../index')
+var util = require('util')
+var events = require('events')
 
-function TestClass(opts) {
-  events.EventEmitter.call(this, opts);
+function TestClass (opts) {
+  events.EventEmitter.call(this, opts)
 }
 
-util.inherits(TestClass, events.EventEmitter);
+util.inherits(TestClass, events.EventEmitter)
 
 TestClass.prototype.shouldResolve = function () {
   var prom = bluebirdEvents(this, {
     resolve: 'done',
     reject: 'error'
-  });
+  })
 
-  this.emit('done');
+  this.emit('done')
 
-  return prom;
-};
+  return prom
+}
 
 TestClass.prototype.shouldReject = function () {
   var prom = bluebirdEvents(this, {
     resolve: 'done',
     reject: 'error'
-  });
+  })
 
-  this.emit('error', new Error('Oh no!'));
+  this.emit('error', new Error('Oh no!'))
 
-  return prom;
-};
+  return prom
+}
 
 TestClass.prototype.shouldResolveWithValue = function () {
   var prom = bluebirdEvents(this, {
     resolve: 'done',
     reject: 'error'
-  });
+  })
 
-  this.emit('done', 'Some Value');
+  this.emit('done', 'Some Value')
 
-  return prom;
-};
+  return prom
+}
 
 TestClass.prototype.shouldRejectWithError = function () {
   var prom = bluebirdEvents(this, {
     resolve: 'done',
     reject: 'error'
-  });
+  })
 
-  this.emit('error', new Error('Some Error!'));
+  this.emit('error', new Error('Some Error!'))
 
-  return prom;
-};
+  return prom
+}
 
-module.exports = exports = TestClass;
+module.exports = exports = TestClass
