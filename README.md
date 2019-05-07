@@ -3,7 +3,7 @@
 [![NPM version](https://img.shields.io/npm/v/bluebird-events.svg)](https://www.npmjs.com/package/bluebird-events)
 [![Downloads](http://img.shields.io/npm/dm/bluebird-events.svg?style=flat)](https://www.npmjs.com/package/bluebird-events)
 [![NPM license](https://img.shields.io/npm/l/bluebird-events.svg?maxAge=2592000)](https://www.npmjs.com/package/bluebird-events)
-[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/) [![Greenkeeper badge](https://badges.greenkeeper.io/toddbluhm/bluebird-events.svg)](https://greenkeeper.io/)
 
 
 # Bluebird-Events
