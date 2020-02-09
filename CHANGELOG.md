@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.0.1
+- Update devDependencies `mocha`, `husky`, `ts-standard`
+
 ## 3.0.0
 
 - Set minimum version of Node at `8.0.0`
