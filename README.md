@@ -1,10 +1,10 @@
 [![Travis CI](https://img.shields.io/travis/toddbluhm/bluebird-events.svg)](https://travis-ci.org/toddbluhm/bluebird-events)
-[![Coveralls](https://img.shields.io/coveralls/toddbluhm/bluebird-events.svg?maxAge=2592000)](https://coveralls.io/github/toddbluhm/bluebird-events)
-[![NPM version](https://img.shields.io/npm/v/bluebird-events.svg)](https://www.npmjs.com/package/bluebird-events)
-[![Downloads](http://img.shields.io/npm/dm/bluebird-events.svg?style=flat)](https://www.npmjs.com/package/bluebird-events)
-[![NPM license](https://img.shields.io/npm/l/bluebird-events.svg?maxAge=2592000)](https://www.npmjs.com/package/bluebird-events)
-[![TS-Standard - Typescript Standard Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/toddbluhm/ts-standard)
-[![Greenkeeper badge](https://badges.greenkeeper.io/toddbluhm/bluebird-events.svg)](https://greenkeeper.io/)
+[![Coverage Status](https://badgen.net/coveralls/c/github/toddbluhm/bluebird-events)](https://coveralls.io/github/toddbluhm/bluebird-events?branch=master)
+[![npm](https://badgen.net/npm/v/bluebird-events)](https://www.npmjs.com/package/bluebird-events)
+[![npm](https://badgen.net/npm/dm/bluebird-events)](https://www.npmjs.com/package/bluebird-events)
+[![License](https://badgen.net/github/license/toddbluhm/bluebird-events)](https://github.com/toddbluhm/bluebird-events/blob/master/LICENSE)
+[![TS-Standard - Typescript Standard Style Guide](https://badgen.net/badge/code%20style/ts-standard/blue?icon=typescript)](https://github.com/toddbluhm/ts-standard)
+[![Dependabot badge](https://badgen.net/dependabot/toddbluhm/bluebird-events?icon=dependabot)](https://dependabot.com/)
 
 # Bluebird-Events
 
