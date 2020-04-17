@@ -1,4 +1,4 @@
-[![Travis CI](https://img.shields.io/travis/toddbluhm/bluebird-events.svg)](https://travis-ci.org/toddbluhm/bluebird-events)
+[![Travis CI](https://badgen.net/travis/toddbluhm/bluebird-events)](https://travis-ci.org/toddbluhm/bluebird-events)
 [![Coverage Status](https://badgen.net/coveralls/c/github/toddbluhm/bluebird-events)](https://coveralls.io/github/toddbluhm/bluebird-events?branch=master)
 [![npm](https://badgen.net/npm/v/bluebird-events)](https://www.npmjs.com/package/bluebird-events)
 [![npm](https://badgen.net/npm/dm/bluebird-events)](https://www.npmjs.com/package/bluebird-events)
