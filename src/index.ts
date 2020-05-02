@@ -1,7 +1,7 @@
 import * as BPromise from 'bluebird'
 import { EventEmitter } from 'events'
 
-type GenericFunction = (...args: any[]) => void;
+type GenericFunction = (...args: any[]) => void
 
 export function promisify (
   emitter: EventEmitter,
@@ -47,7 +47,7 @@ export function promisify (
     }
   }
 
-  return new BPromise((resolve, reject): void => {
+  return new BPromise((resolve, reject): void => { // eslint-disable-line
     if (events.resolve !== false) {
       addEventsToEmitter(events.resolve as string[], finishPromise(resolve))
     }

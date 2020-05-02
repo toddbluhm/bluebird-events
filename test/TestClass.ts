@@ -9,7 +9,7 @@ export class TestClass extends EventEmitter {
       reject: 'error'
     })
     this.emit('done')
-    return prom as BPromise<void>
+    return prom as BPromise<void> // eslint-disable-line
   }
 
   shouldReject (): BPromise<void> {
@@ -18,7 +18,7 @@ export class TestClass extends EventEmitter {
       reject: 'error'
     })
     this.emit('error', new Error('Oh no!'))
-    return prom as BPromise<void>
+    return prom as BPromise<void>  // eslint-disable-line
   }
 
   shouldResolveWithValue (): BPromise<string> {
@@ -27,7 +27,7 @@ export class TestClass extends EventEmitter {
       reject: 'error'
     })
     this.emit('done', 'Some Value')
-    return prom as BPromise<string>
+    return prom as BPromise<string> // eslint-disable-line
   }
 
   shouldRejectWithError (): BPromise<void> {
@@ -36,6 +36,6 @@ export class TestClass extends EventEmitter {
       reject: 'error'
     })
     this.emit('error', new Error('Some Error!'))
-    return prom as BPromise<void>
+    return prom as BPromise<void>  // eslint-disable-line
   }
 }
