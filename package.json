@@ -2,8 +2,8 @@
   "name": "bluebird-events",
   "version": "3.0.1",
   "description": "A wrapper around event emitters that returns a bluerbird promise resolved or rejected when certain events are fired.",
-  "main": "/dist/index.js",
-  "types": "/dist/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "engines": {
     "node": ">=8.0.0"
   },
